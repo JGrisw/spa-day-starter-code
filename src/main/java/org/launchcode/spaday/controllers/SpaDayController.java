@@ -41,6 +41,7 @@ public class SpaDayController {
                 "<select name = 'manipedi'>" +
                 "<option value = 'manicure'>Manicure</option>" +
                 "<option value = 'pedicure'>Pedicure</option>" +
+                "<option value = 'manipedi'>Manicure and Pedicure</option>" +
                 "</select><br>" +
                 "<input type = 'submit' value = 'Submit'>" +
                 "</form>";
@@ -51,7 +52,7 @@ public class SpaDayController {
     public String spaMenu(@RequestParam String name, @RequestParam String skintype, @RequestParam String manipedi, Model model) {
 
         ArrayList<String> facials = new ArrayList<>();
-        facials.add("Microdermabrasion");
+        facials.add("Microderm abrasion");
         facials.add("Hydrofacial");
         facials.add("Rejuvenating");
         facials.add("Enzyme Peel");
@@ -62,7 +63,10 @@ public class SpaDayController {
                 appropriateFacials.add(facials.get(i));
             }
         }
-
+        model.addAttribute("name", name);
+        model.addAttribute("skintype", skintype);
+        model.addAttribute("manipedi", manipedi);
+        model.addAttribute("appropriateFacials", appropriateFacials);
         return "menu";
     }
 }

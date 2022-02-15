@@ -24,3 +24,28 @@ table {
             padding: 10px;
             text-align: center;
 }
+.footer {
+ text-align: center;
+}
+
+.footred {
+    background-color: red;
+    text-align: left;
+}
+
+.footyellow {
+    background-color: yellow;
+    text-align: center;
+}
+
+.footmix {
+    background-color: orange;
+    text-align: right;
+}
+
+#square {
+    height: 50px;
+    width: 50px;
+
+
+}
